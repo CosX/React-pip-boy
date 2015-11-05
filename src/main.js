@@ -1,8 +1,6 @@
 import React from 'react';
-import Hello from './component.js';
+import Page from './es6/component.js';
+import 'normalize-css';
+import './less/main.less';
 
-main();
-
-function main() {
-    React.render(<Hello />, document.getElementById('app'));
-}
+React.render(<Page name="World" />, document.getElementById('app'));
