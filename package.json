@@ -17,11 +17,12 @@
     "babel-loader": "^5.1.4",
     "css-loader": "^0.22.0",
     "file-loader": "^0.8.4",
+    "less": "^2.5.3",
     "less-loader": "^2.2.1",
     "react-hot-loader": "^1.2.7",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.6",
-    "webpack": "^1.9.11",
+    "webpack": "^1.12.3",
     "webpack-dev-server": "^1.9.0"
   },
   "licenses": [
