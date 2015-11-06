@@ -2,6 +2,7 @@
 @glow-green: #19FF81;
 @dark-gradient-green: #041607;
 @light-gradient-green: #11581E;
+@transparent: rgba(0,0,0,0);
 
 @font-face {
   font-family: 'Monofont';
@@ -13,7 +14,7 @@ html {
 body {
   font-family: 'Monofont', Helvetica, sans-serif;
   height:100%;
-  font-size: 30px;
+  font-size: 2vw;
   color: @glow-green;
   background-color: @black;
   background-image:
@@ -29,10 +30,51 @@ body {
   width: 100%;
 }
 
+.container{
+  padding: 3%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.header{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+
+  > * {
+    flex-grow: 1;
+    margin: 0 10px;
+    padding: 0 10px 0 0;
+    border-top: 3px solid;
+    background-image: linear-gradient(to bottom, @glow-green, @transparent);
+    background-repeat: no-repeat;
+    background-size: 3px 4vh;
+    background-position: right;
+  }
+  
+  .title {
+    position: absolute;
+    font-size: 1.3em;
+    top: 3.3vh;
+    margin-left: 5vw;
+    letter-spacing: 6px;
+  }
+
+  .stats {
+    flex-grow: 2;
+  }
+  .label{
+    float: left;
+  }
+  .value {
+    float: right;
+  }
+}
+
 .overlay {
-    background: -webkit-repeating-linear-gradient(-90deg, rgba(99,99,99,0) 0, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0) 100%);
-    background: -moz-repeating-linear-gradient(180deg, rgba(99,99,99,0) 0, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0) 100%);
-    background: repeating-linear-gradient(180deg, rgba(99,99,99,0) 0, rgba(0, 0, 0, 0.3) 50%, rgba(0,0,0,0) 100%);
+    background: -webkit-repeating-linear-gradient(-90deg, @transparent 0, rgba(0,0,0,0.3) 50%, @transparent 100%);
+    background: -moz-repeating-linear-gradient(180deg, @transparent 0, rgba(0,0,0,0.3) 50%, @transparent 100%);
+    background: repeating-linear-gradient(180deg, @transparent 0, rgba(0, 0, 0, 0.3) 50%, @transparent 100%);
     -webkit-background-size: auto 6px;
     background-size: auto 6px;
     position: absolute;

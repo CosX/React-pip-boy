@@ -1,8 +1,16 @@
 import React from 'react';
+import Header from './header.js';
+import Footer from './footer.js'
 
 class Page extends React.Component {
     render() {
-        return <p>Hello {this.props.name}, how are you! Good.</p>;
+        return(
+          <div className="container">
+            <Header />
+
+            <Footer />
+          </div>
+        );
     }
 }
 
