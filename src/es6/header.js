@@ -5,7 +5,11 @@ class Header extends React.Component {
     return(
         <div className="header">
           <div className="stats">
+            <div className="separator left-side">
+            </div>
             <div className="title">STATS</div>
+            <div className="separator right-side">
+            </div>
           </div>
           <div className="hp">
             <div className="label">

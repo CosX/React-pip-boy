@@ -41,27 +41,35 @@ body {
   flex-flow: row nowrap;
   justify-content: space-around;
 
-  > * {
+  > *:not(.stats) {
     flex-grow: 1;
     margin: 0 10px;
     padding: 0 10px 0 0;
-    border-top: 3px solid;
-    background-image: linear-gradient(to bottom, @glow-green, @transparent);
-    background-repeat: no-repeat;
-    background-size: 3px 4vh;
-    background-position: right;
-  }
-
-  .title {
-    position: absolute;
-    font-size: 1.3em;
-    top: 3.3vh;
-    margin-left: 5vw;
-    letter-spacing: 6px;
+    border-top: 2px solid;
+    .fade-border(bottom, right);
   }
 
   .stats {
     flex-grow: 3;
+    display: flex;
+    flex-flow: row nowrap;
+    .separator {
+      border-top: 2px solid;
+      flex-grow: 5;
+      &.left-side{
+        .fade-border(bottom, left);
+      }
+      &.right-side{
+        .fade-border(bottom, right);
+      }
+    }
+    .title {
+      font-size: 1.3em;
+      letter-spacing: 6px;
+      margin-top: -2vh;
+      text-align: center;
+      flex-grow: 1;
+    }
   }
   .label{
     float: left;
@@ -72,22 +80,71 @@ body {
 }
 
 .footer {
-    position: absolute;
-    bottom: 3%;
-}
+  position: absolute;
+  bottom: 3%;
+  width: 93%;
 
-.container-bottom {
+  .container-bottom {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-around;
+
+    .separator, .separator-small{
+      border-bottom: 2px solid;
+      margin-bottom: 15px;
+    }
+
+    .separator{
+      flex-grow: 4;
+      &.left-side{
+        .fade-border(top, left);
+      }
+      &.right-side{
+        .fade-border(top, right);
+      }
+    }
+
+    .separator-small{
+      flex-grow: 1;
+    }
+
+    .push-up{
+      margin-bottom: 15px;
+    }
+
+    .menu-option{
+      padding: 0 15px;
+      margin-top: 15px;
+
+      &:hover, &.active {
+        cursor: pointer;
+        border: 2px solid;
+        background: fade(@glow-green, 20%);
+      }
+    }
+  }
+
+
 }
 
-.fade-border-up{
-  background-image: linear-gradient(to top, #19FF81, rgba(0, 0, 0, 0));
+.main-content {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  width: 100%;
+
+  .list-view {
+    flex-grow: 1;
+  }
+  .main-view {
+    flex-grow: 2;
+  }
+}
+
+.fade-border(@direction: top, @float: left){
+  background-image: linear-gradient(to @direction, @glow-green, @transparent);
   background-repeat: no-repeat;
-  background-size: 3px 4vh;
-  height: 4vh;
-  width: 3px;
+  background-size: 3px 5vh;
+  background-position: @float;
 }
 
 .overlay {
