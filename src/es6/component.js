@@ -7,7 +7,14 @@ class Page extends React.Component {
         return(
           <div className="container">
             <Header />
+            <div className="main-content">
+              <div className="list-view">
 
+              </div>
+              <div className="main-view">
+
+              </div>
+            </div>
             <Footer />
           </div>
         );

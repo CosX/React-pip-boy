@@ -51,7 +51,7 @@ body {
     background-size: 3px 4vh;
     background-position: right;
   }
-  
+
   .title {
     position: absolute;
     font-size: 1.3em;
@@ -61,7 +61,7 @@ body {
   }
 
   .stats {
-    flex-grow: 2;
+    flex-grow: 3;
   }
   .label{
     float: left;
@@ -69,6 +69,25 @@ body {
   .value {
     float: right;
   }
+}
+
+.footer {
+    position: absolute;
+    bottom: 3%;
+}
+
+.container-bottom {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+}
+
+.fade-border-up{
+  background-image: linear-gradient(to top, #19FF81, rgba(0, 0, 0, 0));
+  background-repeat: no-repeat;
+  background-size: 3px 4vh;
+  height: 4vh;
+  width: 3px;
 }
 
 .overlay {
