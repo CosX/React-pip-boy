@@ -17,14 +17,29 @@ class Page extends React.Component {
 
     this.setState({ categories: this.state.categories });
   }
+
+  setItemActive(i){
+    let activecategoryindex = this.state.categories.map((e) => {
+      return e.active; 
+    }).indexOf(true);
+
+    this.state.categories[activecategoryindex].items.map((c) => {
+      c.active = false;
+    });
+    this.state.categories[activecategoryindex].items[i].active = true;
+
+    this.setState({ categories: this.state.categories });
+  }
+
   render() {
-      return(
-        <div className="container">
-          <Header />
-          <MainView />
-          <Footer setActive={this.setFooterActive.bind(this)} categories={this.state.categories} />
-        </div>
-      );
+    let activecategory = this.state.categories.filter((category) => { return category.active; })[0];
+    return(
+      <div className="container">
+        <Header activeCategory={activecategory} />
+        <MainView setActive={this.setItemActive.bind(this)} activeCategory={activecategory} />
+        <Footer setActive={this.setFooterActive.bind(this)} categories={this.state.categories} />
+      </div>
+    );
   }
 }
 

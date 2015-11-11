@@ -1,13 +1,15 @@
 export default class Language{
   constructor(isactive = false){
     this.displayName = "Language";
-    this.dataValue = "";
     this.dataDescription = this.getDescription();
     this.active = isactive;
   }
 
   generateData(){
-    this.dataValue = navigator.language;
+    return new Promise((resolve, reject) => {
+      resolve(navigator.language);
+    });
+
   }
 
   getDescription(){

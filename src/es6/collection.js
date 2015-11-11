@@ -1,7 +1,7 @@
 import Battery from './device/battery.js';
 import Language from './device/language.js';
 
-import Elevation from './position/elevation.js';
+import Coordinates from './position/coordinates.js';
 import Timezone from './position/timezone.js';
 
 export default {
@@ -10,7 +10,7 @@ export default {
       "name": "Position",
       "active": true,
       "items" : [
-        new Elevation(),
+        new Coordinates(true),
         new Timezone()
       ]
     },
@@ -18,7 +18,7 @@ export default {
       "name": "Device",
       "active": false,
       "items" : [
-        new Battery(),
+        new Battery(true),
         new Language()
       ]
     }

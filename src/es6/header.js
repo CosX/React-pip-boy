@@ -7,7 +7,7 @@ class Header extends React.Component {
           <div className="stats">
             <div className="separator left-side">
             </div>
-            <div className="title">STATS</div>
+            <div className="title">{this.props.activeCategory.name}</div>
             <div className="separator right-side">
             </div>
           </div>

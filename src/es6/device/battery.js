@@ -1,14 +1,15 @@
 export default class Battery{
   constructor(isactive = false){
     this.displayName = "Battery";
-    this.dataValue = "";
     this.dataDescription = this.getDescription();
     this.active = isactive;
   }
 
   generateData(){
-    navigator.getBattery().then((batterydata)=>{
-      this.dataValue = batterydata.level * 100;
+    return new Promise((resolve, reject) => {
+      navigator.getBattery().then((batterydata)=>{
+        resolve(`${batterydata.level * 100} %`);
+      });
     });
   }
 
